@@ -1,0 +1,89 @@
+POST http://localhost:4000/
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query{
+  getPhotos{
+    id
+    url
+    tag
+    date
+  }
+}
+
+### 
+
+POST http://localhost:4000/
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query{
+  req1:getById(id:1){
+    id
+    url
+    category
+  }
+  req2:getById(id:3){
+    id
+    url
+    tag
+  }
+}
+
+###
+POST http://localhost:4000/
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query{
+  getByCategory(category:"people"){
+    url
+    tag
+    date
+  }
+  getById(id:6){
+    url
+    id
+    tag
+  }
+}
+
+###
+POST http://localhost:4000/
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query{
+  getCategorys{
+    title
+    sub
+  }
+}
+
+###
+POST http://localhost:4000/
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation{
+  deletePhoto(id:1){
+    message
+  }
+}
+
+###
+POST http://localhost:4000/
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation{
+  addPhoto(url:"https://cdn.pixabay.com/photo/2017/09/15/02/22/fantasy-2750995_1280.jpg",
+  category:"nature"
+  ,tag:["동굴","호수","신비","동화"]){
+    id,
+    url,
+    category,
+    tag,
+    date
+  }
+}

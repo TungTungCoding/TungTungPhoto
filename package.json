@@ -1,0 +1,20 @@
+{
+  "name": "tungtungphoto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-rest": "cd server_rest & npm i",
+    "install-gql": "cd server_gql & npm i",
+    "install-all": "concurrently \"npm run install-rest\" \"npm run install-gql\"",
+    "start-rest": "cd server_rest & npm start",
+    "start-gql": "cd server_gql & npm start",
+    "start": "concurrently \"npm run start-rest\" \"npm run start-gql\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}

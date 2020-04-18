@@ -1,0 +1,34 @@
+type Photo {
+  id: Int!
+  url: String!
+  category: String!
+  tag: [String]!
+  date: String!
+}
+
+type Category {
+  title: String!
+  title_eng: String!
+  sub: [String]!
+}
+
+type DeleteMessage {
+  message: String!
+}
+
+type Query {
+  getPhotos: [Photo]!
+  getByCategory(category: String!): [Photo]!
+  getById(id: Int!): Photo!
+  getCategorys: [Category]!
+}
+
+type Mutation {
+  deletePhoto(id: Int!): DeleteMessage!
+  addPhoto(
+    url: String!
+    category: String!
+    tag: [String]!
+    date: String
+  ): Photo!
+}

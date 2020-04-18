@@ -1,0 +1,31 @@
+GET http://localhost:3000/photos/list
+
+###
+
+GET http://localhost:3000/photos/filter_category
+  ?category=animal
+
+###
+
+GET http://localhost:3000/photos/filter_id
+  ?id=1
+
+###
+
+GET http://localhost:3000/category/list
+
+###
+POST http://localhost:3000/photos/add
+content-type: application/json
+
+
+{
+  "url": "https://cdn.pixabay.com/photo/2012/10/14/11/20/koala-61189_1280.jpg",
+  "category": "animal",
+  "tag": ["코알라", "아기", "엄마", "호주"]
+}
+
+###
+
+DELETE http://localhost:3000/photos/delete
+  ?id=2
